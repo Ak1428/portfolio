@@ -167,12 +167,14 @@
         .hero-content h1 {
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             margin-bottom: 0.5rem;
-            background: var(--gradient-primary);
+            background: linear-gradient(270deg, #14b8a6, #2dd4bf, #0f766e, #14b8a6);
+            background-size: 800% 800%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 800;
             line-height: 1.2;
+            animation: animated-gradient 6s ease-in-out infinite;
         }
 
         .hero-content .title {
@@ -218,22 +220,32 @@
             background: var(--gradient-primary);
             color: #ffffff;
             box-shadow: 0 4px 20px rgba(13, 148, 136, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 1.5px solid rgba(45, 212, 191, 0.12);
+            transition: all 0.3s cubic-bezier(.4,2,.3,1);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 32px rgba(13, 148, 136, 0.4);
+            transform: translateY(-3px) scale(1.04) rotate(-1deg);
+            box-shadow: 0 12px 36px rgba(13, 148, 136, 0.5);
+            filter: brightness(1.1) saturate(1.2);
         }
 
         .btn-secondary {
             border: 2px solid var(--accent-primary);
             color: var(--accent-primary);
             background: transparent;
+            position: relative;
+            overflow: hidden;
+            border: 1.5px solid rgba(45, 212, 191, 0.12);
+            transition: all 0.3s cubic-bezier(.4,2,.3,1);
         }
 
         .btn-secondary:hover {
-            background: rgba(13, 148, 136, 0.08);
-            transform: translateY(-3px);
+            background: rgba(13, 148, 136, 0.13);
+            transform: translateY(-3px) scale(1.04) rotate(-1deg);
+            filter: brightness(1.1) saturate(1.2);
         }
 
         /* Sections */
@@ -292,29 +304,30 @@
         }
 
         .project-card {
-            background: var(--secondary-bg);
-            border-radius: 8px;
+            background: rgba(22, 32, 34, 0.55);
+            border-radius: 18px;
             padding: 2.5rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(.4,2,.3,1);
             border: none;
             overflow: hidden;
             position: relative;
             display: flex;
             flex-direction: column;
             height: 100%;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .project-card::before {
-            display: none;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 1.5px 8px 0 rgba(20, 184, 166, 0.10);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(45, 212, 191, 0.12);
         }
 
         .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-8px) scale(1.03) rotate(-1deg);
+            box-shadow: 0 16px 48px 0 rgba(20, 184, 166, 0.18), 0 2px 16px 0 rgba(45, 212, 191, 0.18);
+            border-color: var(--accent-secondary);
+            filter: brightness(1.08) saturate(1.2);
         }
 
-        .project-card:hover::before {
+        .project-card::before {
             display: none;
         }
 
@@ -1109,3 +1122,4 @@
     </script>
 </body>
 </html>
+
