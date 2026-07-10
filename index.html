@@ -444,7 +444,8 @@
 
         .project-links {
             display: flex;
-            gap: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.9rem;
             margin-top: auto;
             padding-top: 1.5rem;
             border-top: 1px solid var(--tertiary-bg);
@@ -459,11 +460,27 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 0.95rem;
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
+            background: rgba(20, 184, 166, 0.08);
+            border: 1px solid rgba(20, 184, 166, 0.18);
         }
 
         .project-links a:hover {
             color: var(--accent-secondary);
-            transform: translateX(3px);
+            transform: translateY(-2px);
+            background: rgba(20, 184, 166, 0.16);
+        }
+
+        .project-link-live {
+            background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 100%);
+            color: #ffffff;
+            border-color: transparent;
+        }
+
+        .project-link-live:hover {
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(20, 184, 166, 0.25);
         }
 
         /* Skills Section */
@@ -913,7 +930,12 @@
                         <span class="tech-badge">REST APIs</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Ak1428/Freelancing-Web-Application" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://freelancing-web-application.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link-live">
+                            <i class="fas fa-globe"></i> Live Website
+                        </a>
+                        <a href="https://github.com/Ak1428/Freelancing-Web-Application" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
                     </div>
                 </div>
 
